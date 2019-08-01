@@ -1,3 +1,3 @@
 # first_Repository
-just a repository
+just a repository!
 so!how to use gitgub?
