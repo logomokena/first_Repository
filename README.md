@@ -1,2 +1,3 @@
 # first_Repository
-just a repository
+Just a repository!
+So!how to use GitHub?
