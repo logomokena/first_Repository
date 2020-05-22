@@ -14,13 +14,13 @@ class get_img(object):
         data = HTMLSession().get(link)
         #file_page = str(file_page)
         print(folder_name)
-        with open(r"E:\MM_image"+os.sep+folder_name+os.sep+str(image_page)+".jpg","wb") as f_img:
+        with open(r"D:\MM_image"+os.sep+folder_name+os.sep+str(image_page)+".jpg","wb") as f_img:
             f_img.write(data.content)
 
     #创建文件夹
     def confirm_path(self,folder_name):
-        if not os.path.exists(r"E:\MM_image\\"+folder_name):
-            os.makedirs(r"E:\MM_image\\"+folder_name)
+        if not os.path.exists(r"D:\MM_image\\"+folder_name):
+            os.makedirs(r"D:\MM_image\\"+folder_name)
 
 
     #默认爬取方法(获取所有图库的url链接,并存储到.txt文件里面取)
@@ -54,7 +54,7 @@ class get_img(object):
         #获取下一页url链接
         next_url = response.html.xpath("//div[@class='w1000 box03']/div[@class='page']/ul/li[contains(string(),'下一页')]/a/@href",first=False)
         while next_url:
-            self.parse("https://www.169tp.com/wangyouzipai/"+next_url[0])
+            self.parse("https://www.1000tuku.com/guoneimeinv/"+next_url[0])
 
         #读取text.txt以获取链接
 #        with open(r"C:\Users\admin\Desktop\text.txt","r") as fr:
@@ -91,13 +91,15 @@ class get_img(object):
 
 
 def main():
-    url = "https://www.169tp.com/wangyouzipai/"
+    url = "https://www.1000tuku.com/guoneimeinv/"
     image = get_img()
     image.parse(url)
 
+"""
 def amain():
     url = "https://www.169tp.com/wangyouzipai/2019/0420/43673.html"
     image = get_img()
     image.get_parse(url,1,"小萝莉闺房养眼自拍")
+"""
 
 main()
